@@ -21,3 +21,23 @@ var upper = names.map(function(name) {
 });
 
 console.log("transformed these names %s to these names %s", names, upper);
+
+function Person(name) {
+  this.name = name;
+}
+
+Person.prototype = {
+  constructor: Person,
+  sayName: function() {
+    console.log(this.name);
+  },
+  toString: function() {
+    return "[Person " + this.name + "]";
+  }
+};
+
+var person1 = new Person("The Dude");
+var person2 = new Person("Walter");
+
+console.log(person1.toString());
+console.log(person2.toString());
